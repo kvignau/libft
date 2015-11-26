@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:31:01 by kvignau           #+#    #+#             */
-/*   Updated: 2015/11/26 12:42:18 by kvignau          ###   ########.fr       */
+/*   Updated: 2015/11/26 17:11:52 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,16 @@
 
 size_t		ft_strlen(const char *str);
 void		ft_putchar(char c);
+void		ft_putchar_fd(char c, int fd);
 void		ft_putstr(char *str);
+void		ft_putstr_fd(char *str, int fd);
+void		ft_putendl(char const *str);
+void		ft_putendl_fd(char const *str, int fd);
 void		ft_putnbr(int n);
+void		ft_putnbr_fd(int n, int fd);
 char		*ft_strcat(char *dst, const char *src);
 char		*ft_strncat(char *s1, const char *s2, size_t n);
+size_t		ft_strlcat(char *dst, const char *src, size_t size);
 char		*ft_strcpy(char *dst, const char *src);
 char		*ft_strncpy(char *dst, const char *src, size_t n);
 int			ft_isalpha(int c);

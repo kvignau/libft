@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 12:30:59 by kvignau           #+#    #+#             */
-/*   Updated: 2015/11/26 12:46:00 by kvignau          ###   ########.fr       */
+/*   Updated: 2015/11/26 16:35:21 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		ft_atoi(const char *str)
 	}
 	while (str[i] != '\0')
 	{
-		if (str[i] >= '0' && str[i] <= '9')
+		if (ft_isdigit(str[i]))
 			nb = (nb * 10) + (str[i] - '0');
 		else
 			return (neg != 0 ? (nb * -1) : (nb));

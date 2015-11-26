@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 14:05:23 by kvignau           #+#    #+#             */
-/*   Updated: 2015/11/26 17:19:42 by kvignau          ###   ########.fr       */
+/*   Created: 2015/11/26 13:53:44 by kvignau           #+#    #+#             */
+/*   Updated: 2015/11/26 16:16:48 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_putnbr(int n)
+size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
-	ft_putnbr_fd(n, 1);
+	size_t	i;
+	size_t	lendst;
+	size_t	lensrc;
+
+	i = 0;
+	lendst = ft_strlen(dst);
+	lensrc = ft_strlen(src);
+	if (size <= lendst)
+		return (size + lensrc);
+	else
+		return (lensrc);
 }

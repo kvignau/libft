@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 14:46:00 by kvignau           #+#    #+#             */
-/*   Updated: 2015/11/30 15:38:47 by kvignau          ###   ########.fr       */
+/*   Created: 2015/11/27 09:31:56 by kvignau           #+#    #+#             */
+/*   Updated: 2015/11/27 10:02:39 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			main(void)
+void		*ft_memalloc(size_t size)
 {
-	char	test[20] = "abc";
-	//char	test1[8] = "sc";
+	void	*mem;
 
-	ft_putnbr(ft_strlcat(test, "abcdefghijklmnop", 10));
-	ft_putnbr(strlcat(test, "abcdefghijklmnop", 10));
-	return (0);
+	if (size == 0)
+		return (NULL);
+	mem = (void *)malloc(sizeof(void) * size);
+	if (mem)
+		ft_bzero(mem, size);
+	else
+		return (NULL);
+	return (mem);
 }

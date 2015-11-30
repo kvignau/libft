@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 14:46:00 by kvignau           #+#    #+#             */
-/*   Updated: 2015/11/30 15:38:47 by kvignau          ###   ########.fr       */
+/*   Created: 2015/11/30 13:59:51 by kvignau           #+#    #+#             */
+/*   Updated: 2015/11/30 14:05:00 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			main(void)
+int			ft_strequ(char const *s1, char const *s2)
 {
-	char	test[20] = "abc";
-	//char	test1[8] = "sc";
-
-	ft_putnbr(ft_strlcat(test, "abcdefghijklmnop", 10));
-	ft_putnbr(strlcat(test, "abcdefghijklmnop", 10));
-	return (0);
+	if (ft_strcmp(s1, s2) == 0)
+		return (1);
+	else
+		return (0);
 }

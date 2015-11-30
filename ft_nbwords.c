@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_nbwords.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 14:46:00 by kvignau           #+#    #+#             */
-/*   Updated: 2015/11/30 15:38:47 by kvignau          ###   ########.fr       */
+/*   Created: 2015/11/30 11:35:13 by kvignau           #+#    #+#             */
+/*   Updated: 2015/11/30 11:39:33 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			main(void)
+size_t		ft_nbwords(char const *s, char c)
 {
-	char	test[20] = "abc";
-	//char	test1[8] = "sc";
+	size_t	i;
+	size_t	j;
+	int		ok;
 
-	ft_putnbr(ft_strlcat(test, "abcdefghijklmnop", 10));
-	ft_putnbr(strlcat(test, "abcdefghijklmnop", 10));
-	return (0);
+	i = 0;
+	j = 0;
+	ok = 1;
+	while (s[i])
+	{
+		if (s[i] != c && ok)
+		{
+			ok = 0;
+			j++;
+		}
+		else if (s[i] == c)
+			ok = 1;
+		i++;
+	}
+	return (j);
 }

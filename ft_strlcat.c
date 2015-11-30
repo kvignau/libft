@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 13:53:44 by kvignau           #+#    #+#             */
-/*   Updated: 2015/11/26 16:16:48 by kvignau          ###   ########.fr       */
+/*   Updated: 2015/11/30 15:42:33 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	lendst = ft_strlen(dst);
 	lensrc = ft_strlen(src);
-	if (size <= lendst)
-		return (size + lensrc);
-	else
-		return (lensrc);
+	while (src[i] != '\0' && i < size)
+	{
+		dst[i + lendst] = src[i];
+		i++;
+	}
+	dst[i + lendst] = '\0';
+	return (i + lendst);
 }

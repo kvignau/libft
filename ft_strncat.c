@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 13:44:31 by kvignau           #+#    #+#             */
-/*   Updated: 2015/11/24 15:37:01 by kvignau          ###   ########.fr       */
+/*   Updated: 2015/11/30 12:03:31 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char		*ft_strncat(char *s1, const char *s2, size_t n)
 	int		len;
 
 	i = 0;
+	if (s1 == NULL && s2 == NULL)
+		return (NULL);
 	len = ft_strlen(s1);
 	while (i < n && s2 != '\0')
 	{

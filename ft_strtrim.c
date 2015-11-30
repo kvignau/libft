@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 14:46:00 by kvignau           #+#    #+#             */
-/*   Updated: 2015/11/30 15:38:47 by kvignau          ###   ########.fr       */
+/*   Created: 2015/11/30 12:09:55 by kvignau           #+#    #+#             */
+/*   Updated: 2015/11/30 13:45:49 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			main(void)
+char		*ft_strtrim(char const *s)
 {
-	char	test[20] = "abc";
-	//char	test1[8] = "sc";
+	size_t	i;
+	size_t	size;
+	size_t	len;
+	char	*str;
 
-	ft_putnbr(ft_strlcat(test, "abcdefghijklmnop", 10));
-	ft_putnbr(strlcat(test, "abcdefghijklmnop", 10));
-	return (0);
+	i = 0;
+	while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t') && s[i])
+		i++;
+	len = ft_strlen(s + i);
+	len--;
+	while ((s[len + i] == ' ' || s[len + i] == '\n' ||
+				s[len + i] == '\t') && s[i])
+		len--;
+	size = ft_strlen(s + i);
+	size = size - (size - len);
+	str = ft_strnew(size + 1);
+	ft_strncpy(str, s + i, size + 1);
+	return (str);
 }

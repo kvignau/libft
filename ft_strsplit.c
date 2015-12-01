@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 16:13:48 by kvignau           #+#    #+#             */
-/*   Updated: 2015/11/30 15:26:01 by kvignau          ###   ########.fr       */
+/*   Updated: 2015/12/01 14:18:46 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static char			*ft_stradd(char const *s, char c, int i)
 	int				j;
 
 	j = 0;
-	len = ft_strlencar(s, c , i);
+	len = ft_strlencar(s, c, i);
 	word = ft_strnew(len + 1);
 	while (s[i] && j < len)
 	{
@@ -40,10 +40,9 @@ static char			*ft_stradd(char const *s, char c, int i)
 	return (word);
 }
 
-char				**ft_strsplit(char const *s , char c)
+char				**ft_strsplit(char const *s, char c)
 {
 	char			**tab;
-	size_t			nbword;
 	int				j;
 	int				i;
 	int				ok;
@@ -51,15 +50,15 @@ char				**ft_strsplit(char const *s , char c)
 	ok = 1;
 	i = 0;
 	j = 0;
-	nbword = ft_nbwords(s, c);
-	tab = (char **)malloc(sizeof(char *) * (nbword + 1));
+	if (s == NULL)
+		return (NULL);
+	tab = (char **)malloc(sizeof(char *) * (ft_nbwords(s, c) + 1));
 	while (s[i])
 	{
 		if (s[i] != c && ok)
 		{
 			ok = 0;
-			tab[j] = ft_stradd(s, c, i);
-			j++;
+			tab[j++] = ft_stradd(s, c, i);
 		}
 		else if (s[i] == c)
 			ok = 1;

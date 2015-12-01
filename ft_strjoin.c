@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 11:47:30 by kvignau           #+#    #+#             */
-/*   Updated: 2015/11/30 12:08:44 by kvignau          ###   ########.fr       */
+/*   Updated: 2015/12/01 14:25:39 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	char	*join;
 	size_t	len;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
 	join = ft_strnew(len);
 	if (s1[0])

@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 12:09:55 by kvignau           #+#    #+#             */
-/*   Updated: 2015/11/30 13:45:49 by kvignau          ###   ########.fr       */
+/*   Updated: 2015/12/01 14:26:20 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char		*ft_strtrim(char const *s)
 	char	*str;
 
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t') && s[i])
 		i++;
 	len = ft_strlen(s + i);

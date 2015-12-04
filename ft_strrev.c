@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/01 12:10:22 by kvignau           #+#    #+#             */
-/*   Updated: 2015/12/02 10:29:35 by kvignau          ###   ########.fr       */
+/*   Created: 2015/12/02 11:33:31 by kvignau           #+#    #+#             */
+/*   Updated: 2015/12/02 12:22:12 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+char		*ft_strrev(char *str)
 {
-	t_list	*tmp;
+	size_t	i;
+	size_t	len;
+	char	save;
 
-	if (lst != NULL && (*f))
+	i = 0;
+	if (str == NULL)
+		return (NULL);
+	len = ft_strlen(str);
+	while (i < len)
 	{
-		tmp = (t_list *)ft_memalloc(sizeof((*f)(lst)));
-		if (tmp == NULL)
-			return (NULL);
-		tmp = (*f)(lst);
-		tmp->next = ft_lstmap(lst->next, (*f));
-		return (tmp);
+		save = str[i];
+		str[i] = str[len - 1];
+		str[len - 1] = save;
+		i++;
+		len--;
 	}
-	return (NULL);
+	return (str);
 }

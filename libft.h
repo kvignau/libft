@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:31:01 by kvignau           #+#    #+#             */
-/*   Updated: 2015/12/01 17:26:22 by kvignau          ###   ########.fr       */
+/*   Updated: 2015/12/03 11:03:32 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void				ft_strdel(char **as);
 char				*ft_itoa(int n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				**ft_strsplit(char const *s, char c);
-size_t				ft_nbwords(char const *s, char c);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
@@ -83,5 +82,10 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+size_t				ft_nbrlen(int n);
+int					ft_max(int *tab, size_t size);
+size_t				ft_nbwords(char const *s, char c);
+size_t				ft_nbwordsspace(char const *s);
+char				*ft_strrev(char *str);
 
 #endif

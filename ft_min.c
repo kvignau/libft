@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/01 12:10:22 by kvignau           #+#    #+#             */
-/*   Updated: 2015/12/02 10:29:35 by kvignau          ###   ########.fr       */
+/*   Created: 2015/12/03 10:55:50 by kvignau           #+#    #+#             */
+/*   Updated: 2015/12/03 11:02:41 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+int			ft_max(int *tab, size_t size)
 {
-	t_list	*tmp;
+	size_t	i;
+	int		nb;
 
-	if (lst != NULL && (*f))
+	i = 0;
+	nb = tab[0];
+	i++;
+	while (i < size)
 	{
-		tmp = (t_list *)ft_memalloc(sizeof((*f)(lst)));
-		if (tmp == NULL)
-			return (NULL);
-		tmp = (*f)(lst);
-		tmp->next = ft_lstmap(lst->next, (*f));
-		return (tmp);
+		if (nb > tab[i])
+			nb = tab[i];
+		i++;
 	}
-	return (NULL);
+	return (nb);
 }

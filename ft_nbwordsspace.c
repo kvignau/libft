@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_nbwords.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/01 12:10:22 by kvignau           #+#    #+#             */
-/*   Updated: 2015/12/02 10:29:35 by kvignau          ###   ########.fr       */
+/*   Created: 2015/11/30 11:35:13 by kvignau           #+#    #+#             */
+/*   Updated: 2015/12/03 10:40:36 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+size_t		ft_nbwordsspace(char const *s)
 {
-	t_list	*tmp;
+	size_t	i;
+	size_t	j;
+	int		ok;
 
-	if (lst != NULL && (*f))
+	i = 0;
+	j = 0;
+	ok = 1;
+	while (s[i])
 	{
-		tmp = (t_list *)ft_memalloc(sizeof((*f)(lst)));
-		if (tmp == NULL)
-			return (NULL);
-		tmp = (*f)(lst);
-		tmp->next = ft_lstmap(lst->next, (*f));
-		return (tmp);
+		if ((s[i] != ' ' && s[i] != '\t') && ok)
+		{
+			ok = 0;
+			j++;
+		}
+		else if ((s[i] == ' ' || s[i] == '\t'))
+			ok = 1;
+		i++;
 	}
-	return (NULL);
+	return (j);
 }

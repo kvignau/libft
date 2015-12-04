@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 13:23:05 by kvignau           #+#    #+#             */
-/*   Updated: 2015/11/26 12:07:27 by kvignau          ###   ########.fr       */
+/*   Updated: 2015/12/04 10:41:56 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,12 @@ void					*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		strdst[i] = strsrc[i];
 		i++;
 	}
-	if (i < n)
-		return (&strdst[i + 1]);
-	return (NULL);
+	if (i == n)
+		return (NULL);
+	if (strsrc[i] == c1)
+	{
+		strdst[i] = strsrc[i];
+		i++;
+	}
+	return ((void *)&strdst[i]);
 }

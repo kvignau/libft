@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 13:23:05 by kvignau           #+#    #+#             */
-/*   Updated: 2015/11/26 12:07:27 by kvignau          ###   ########.fr       */
+/*   Created: 2015/12/03 10:55:50 by kvignau           #+#    #+#             */
+/*   Updated: 2015/12/03 11:02:41 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void					*ft_memccpy(void *dst, const void *src, int c, size_t n)
+int			ft_max(int *tab, size_t size)
 {
-	const unsigned char	*strsrc;
-	unsigned char		*strdst;
-	unsigned char		c1;
-	size_t				i;
+	size_t	i;
+	int		nb;
 
 	i = 0;
-	strsrc = (unsigned char *)src;
-	strdst = (unsigned char *)dst;
-	c1 = (unsigned char)c;
-	while (i < n && c1 != strsrc[i])
+	nb = tab[0];
+	i++;
+	while (i < size)
 	{
-		strdst[i] = strsrc[i];
+		if (nb > tab[i])
+			nb = tab[i];
 		i++;
 	}
-	if (i < n)
-		return (&strdst[i + 1]);
-	return (NULL);
+	return (nb);
 }

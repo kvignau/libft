@@ -21,6 +21,8 @@ char		*ft_strdup(const char *s1)
 	i = 0;
 	len = ft_strlen(s1);
 	tab = (char *)malloc(sizeof(char) * (len + 1));
+	if (!tab)
+		return (NULL);
 	while (i < len)
 	{
 		tab[i] = s1[i];

@@ -50,9 +50,9 @@ char				**ft_strsplit(char const *s, char c)
 	ok = 1;
 	i = 0;
 	j = 0;
-	if (s == NULL)
-		return (NULL);
 	tab = (char **)malloc(sizeof(char *) * (ft_nbwords(s, c) + 1));
+	if (!tab || !s)
+		return (NULL);
 	while (s[i])
 	{
 		if (s[i] != c && ok)

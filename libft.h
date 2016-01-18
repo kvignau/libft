@@ -83,7 +83,7 @@ void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 size_t				ft_nbrlen(int n);
-int					ft_max(int *tab, size_t size);
+int					ft_min(int *tab, size_t size);
 size_t				ft_nbwords(char const *s, char c);
 size_t				ft_nbwordsspace(char const *s);
 char				*ft_strrev(char *str);

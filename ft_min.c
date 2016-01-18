@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int			ft_max(int *tab, size_t size)
+int			ft_min(int *tab, size_t size)
 {
 	size_t	i;
 	int		nb;

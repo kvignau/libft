@@ -6,13 +6,13 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 10:41:59 by kvignau           #+#    #+#             */
-/*   Updated: 2015/12/03 10:47:41 by kvignau          ###   ########.fr       */
+/*   Updated: 2016/01/19 14:35:19 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			ft_nbrlen(int n)
+size_t			ft_nbrlen(int n, int base)
 {
 	size_t		i;
 
@@ -23,7 +23,7 @@ size_t			ft_nbrlen(int n)
 		return (1);
 	while (n != 0)
 	{
-		n = n / 10;
+		n = n / base;
 		i++;
 	}
 	return (i);

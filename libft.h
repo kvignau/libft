@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:31:01 by kvignau           #+#    #+#             */
-/*   Updated: 2015/12/03 11:03:32 by kvignau          ###   ########.fr       */
+/*   Updated: 2016/01/19 15:46:20 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_atoi(const char *str);
+char				*ft_itoa_base(int n, unsigned int base);
 void				ft_strclr(char *s);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
@@ -82,8 +83,8 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-size_t				ft_nbrlen(int n);
-int					ft_min(int *tab, size_t size);
+size_t				ft_nbrlen(int n, int base);
+int					ft_max(int *tab, size_t size);
 size_t				ft_nbwords(char const *s, char c);
 size_t				ft_nbwordsspace(char const *s);
 char				*ft_strrev(char *str);

@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:31:01 by kvignau           #+#    #+#             */
-/*   Updated: 2016/01/19 15:46:20 by kvignau          ###   ########.fr       */
+/*   Updated: 2016/01/20 10:42:28 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
+char				*ft_strupper(char *str);
 int					ft_tolower(int c);
 char				*ft_strdup(const char *s1);
 char				*ft_strchr(const char *s, int c);

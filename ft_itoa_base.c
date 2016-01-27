@@ -6,17 +6,19 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 13:27:26 by kvignau           #+#    #+#             */
-/*   Updated: 2016/01/19 16:43:13 by kvignau          ###   ########.fr       */
+/*   Updated: 2016/01/27 11:30:12 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static void					ft_base(int len, char **str, unsigned int base,
-								int nb)
+		int nb)
 {
-	char					tab_base[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+	char					*tab_base;
 
+	tab_base = ft_strnew(25);
+	tab_base = "abcdefghijklmnopqrstuvwxyz";
 	while (nb != 0)
 	{
 		len--;

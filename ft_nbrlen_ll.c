@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 10:41:59 by kvignau           #+#    #+#             */
-/*   Updated: 2016/01/26 18:22:29 by kvignau          ###   ########.fr       */
+/*   Updated: 2016/01/27 10:52:49 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ size_t			ft_nbrlen_ll(long long n, unsigned int base)
 
 	i = 0;
 	if (n < 0)
-	{
-		n = -n
-		i++;
-	}
+		n = -n;
 	if (n == 0)
 		return (1);
 	while (n != 0)

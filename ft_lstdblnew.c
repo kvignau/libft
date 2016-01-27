@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstdblnew.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 11:52:17 by kvignau           #+#    #+#             */
-/*   Updated: 2016/01/27 11:31:35 by kvignau          ###   ########.fr       */
+/*   Created: 2016/01/26 14:58:39 by kvignau           #+#    #+#             */
+/*   Updated: 2016/01/26 14:58:43 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char						*ft_itoa(int n)
+t_dbllist	*ft_lstdblnew(void)
 {
-	int			i;
-	int			j;
-	int			len;
-	char		*str;
-	char		*itoa;
+	t_dbllist	*list;
 
-	len = ft_nbrlen(n, 10);
-	i = 0;
-	j = 0;
-	str = ft_strnew(len);
-	if (!str)
+	list = (t_dbllist *)malloc(sizeof(t_dbllist));
+	if (list == NULL)
 		return (NULL);
-	if (n < 0)
-		str[i++] = '-';
-	itoa = ft_itoa_base_ll(n, 10);
-	while (itoa[j] != '\0')
+	else
 	{
-		str[i + j] = itoa[j];
-		j++;
+		list->length = 0;
+		list->tail = NULL;
+		list->head = NULL;
 	}
-	str[i + j] = '\0';
-	ft_memdel((void **)&itoa);
-	return (str);
+	return (list);
 }

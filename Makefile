@@ -6,7 +6,7 @@
 #    By: kvignau <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 10:04:06 by kvignau           #+#    #+#              #
-#    Updated: 2016/01/20 10:37:24 by kvignau          ###   ########.fr        #
+#    Updated: 2016/01/26 14:52:10 by kvignau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRC += ft_toupper.c ft_strcmp.c ft_strncmp.c ft_bzero.c ft_memset.c ft_memchr.c
 SRC += ft_memcpy.c ft_memccpy.c ft_memmove.c ft_putchar.c ft_putnbr.c
 SRC += ft_putstr.c ft_strcpy.c ft_strncpy.c ft_strdup.c ft_strchr.c
 SRC += ft_strcat.c ft_strncat.c ft_strlen.c ft_nbrlen.c ft_itoa_base.c
-SRC += ft_strupper.c
+SRC += ft_strupper.c ft_nbrlen_ll.c ft_itoa_base_ll.c ft_lstdbladd.c
+SRC += ft_lstdblnew.c ft_lstdbldel.c
 SRCO = $(SRC:.c=.o)
 HEADERS = .
 CC = gcc

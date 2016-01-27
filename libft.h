@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:31:01 by kvignau           #+#    #+#             */
-/*   Updated: 2016/01/20 10:42:28 by kvignau          ###   ########.fr       */
+/*   Updated: 2016/01/26 14:59:36 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,20 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef	struct		s_elem
+{
+	void			*content;
+	struct s_elem	*prev;
+	struct s_elem	*next;
+}					t_elem;
+
+typedef	struct		s_dbllist
+{
+	size_t			length;
+	t_elem			*tail;
+	t_elem			*head;
+}					t_dbllist;
 
 size_t				ft_strlen(const char *str);
 void				ft_putchar(char c);
@@ -62,6 +76,9 @@ void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_atoi(const char *str);
 char				*ft_itoa_base(int n, unsigned int base);
+char				*ft_itoa_base_ll(long long n, unsigned int base);
+size_t				ft_nbrlen(int n, unsigned int base);
+size_t				ft_nbrlen_ll(long long n, unsigned int base);
 void				ft_strclr(char *s);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
@@ -84,10 +101,13 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-size_t				ft_nbrlen(int n, int base);
 int					ft_max(int *tab, size_t size);
 size_t				ft_nbwords(char const *s, char c);
 size_t				ft_nbwordsspace(char const *s);
 char				*ft_strrev(char *str);
+void				ft_lstdbladd(t_dbllist **list, void *content,\
+					size_t cont_size);
+t_dbllist			*ft_lstdblnew(void);
+void				ft_lstdbldel(t_dbllist **list);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 13:27:26 by kvignau           #+#    #+#             */
-/*   Updated: 2016/01/27 11:30:12 by kvignau          ###   ########.fr       */
+/*   Updated: 2016/03/03 14:37:38 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,14 @@
 static void					ft_base(int len, char **str, unsigned int base,
 		int nb)
 {
-	char					*tab_base;
-
-	tab_base = ft_strnew(25);
-	tab_base = "abcdefghijklmnopqrstuvwxyz";
 	while (nb != 0)
 	{
-		len--;
 		if (base >= 10 && nb % base >= 10)
-		{
-			(*str)[len] = tab_base[(nb % base) - 10];
-		}
+			(*str)[len] = (nb % base) + 65;
 		else
-		{
 			(*str)[len] = (nb % base) + 48;
-		}
 		nb = nb / base;
+		len--;
 	}
 }
 
@@ -51,11 +43,10 @@ char						*ft_itoa_base(int n, unsigned int base)
 		nb = -n;
 	}
 	str[len] = '\0';
+	len--;
 	if (n == 0)
-		str[--len] = '0';
+		str[len] = '0';
 	else
-	{
 		ft_base(len, &str, base, nb);
-	}
 	return (str);
 }

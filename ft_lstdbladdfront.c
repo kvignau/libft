@@ -28,8 +28,8 @@ void	ft_lstdbladdfront(t_dbllist **list, void *content, size_t cont_size)
 	ft_memcpy(new_elem->content, content, cont_size);
 	new_elem->next = NULL;
 	new_elem->prev = NULL;
-	if ((*list)->head == NULL)
-		(*list)->head = new_elem;
+	if ((*list)->tail == NULL)
+		(*list)->tail = new_elem;
 	else
 	{
 		(*list)->head->prev = new_elem;

@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:31:01 by kvignau           #+#    #+#             */
-/*   Updated: 2016/01/26 14:59:36 by kvignau          ###   ########.fr       */
+/*   Updated: 2016/03/23 19:23:50 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,7 @@ t_dbllist			*ft_lstdblnew(void);
 void				ft_lstdbldel(t_dbllist **list);
 void				ft_lstdbladdfront(t_dbllist **list, void *content,\
 					size_t cont_size);
+char				*ft_strjoinandfree(char const *s1, char const *s2, int i);
+char				*ft_strupper(char *str);
 
 #endif

@@ -112,8 +112,5 @@ void				ft_lstdbldel(t_dbllist **list);
 void				ft_lstdbladdfront(t_dbllist **list, void *content,\
 					size_t cont_size);
 char				*ft_strjoinandfree(char const *s1, char const *s2, int i);
-char				*ft_strupper(char *str);
-void				ft_lstdbladdfront(t_dbllist **list, void *content,\
-					size_t cont_size);
 
 #endif

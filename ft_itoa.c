@@ -6,7 +6,7 @@
 /*   By: kvignau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 11:52:17 by kvignau           #+#    #+#             */
-/*   Updated: 2016/01/27 11:31:35 by kvignau          ###   ########.fr       */
+/*   Updated: 2016/04/27 13:26:29 by kvignau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char						*ft_itoa(int n)
 		return (NULL);
 	if (n < 0)
 		str[i++] = '-';
-	itoa = ft_itoa_base_ll(n, 10);
+	itoa = ft_itoa_base(n, 10);
 	while (itoa[j] != '\0')
 	{
 		str[i + j] = itoa[j];
